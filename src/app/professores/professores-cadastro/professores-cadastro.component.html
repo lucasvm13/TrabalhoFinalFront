@@ -1,0 +1,53 @@
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>{{editando?'Edicão de ': 'Novo '}} Professor</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Nome</label>
+              <input pInputText placeholder="Informe uma nome" type="text" name="nome"
+                [(ngModel)]="professor.nome"
+                #nome="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label>Idade</label>
+                <input pInputText placeholder="Informe uma idade"type="text" name="idade"
+
+                  [(ngModel)]="professor.idade"
+                  #idade="ngModel" required maxlength="99">
+  
+                  <div *ngIf="idade.hasError('required') && idade.touched">Informe uma idade</div>
+                  <div *ngIf="idade.hasError('minlength')">A idade deve ser no máximo 99 anos</div>
+              </div>
+
+              <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label>Sexo</label>
+                <input pInputText placeholder="Informe um sexo"type="text" name="sexo"
+
+                  [(ngModel)]="professor.sexo"
+                  #sexo="ngModel" required minlength="1">
+  
+                  <div *ngIf="sexo.hasError('required') && sexo.touched">Informe uma sexo</div>
+                  <div *ngIf="sexo.hasError('minlength')">O sexo deve ter no mínimo 1 caracter</div>
+              </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <a pButton type="button" label="Novo" class="ui-button-info" class=" boxButton"  routerLink="/professores/novo"></a>
+                <a routerLink="/professores">Voltar para a pesquisa</a>
+            </div>
+
+
+        </div>
+    </form>
+</div>

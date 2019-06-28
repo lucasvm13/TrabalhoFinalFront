@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>{{editando?'Edicão de ': 'Novo '}} Aluno</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Descrição</label>
+              <input pInputText placeholder="Informe um nome" type="text" name="nome"
+                [(ngModel)]="aluno.nome"
+                #nome="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Nota 1</label>
+              <input pInputText placeholder="Informe a primeira nota"type="text" name="nota 1"
+                [(ngModel)]="aluno.n1"
+                #n1="ngModel" required minlength="1">
+
+                <div *ngIf="n1.hasError('required') && n1.touched">Informe uma nota</div>
+                <div *ngIf="n1.hasError('minlength')">A nota deve ter no mínimo 1 caracter</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Nota 2</label>
+              <input pInputText placeholder="Informe a segunda nota"type="text" name="nota 2"
+                [(ngModel)]="aluno.n2"
+                #n2="ngModel" required minlength="1">
+
+                <div *ngIf="n2.hasError('required') && n2.touched">Informe uma nota</div>
+                <div *ngIf="n2.hasError('minlength')">A nota deve ter no mínimo 1 caracter</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Nota 3</label>
+              <input pInputText placeholder="Informe a terceira nota"type="text" name="nota 3"
+                [(ngModel)]="aluno.n3"
+                #n3="ngModel" required minlength="1">
+
+                <div *ngIf="n3.hasError('required') && n3.touched">Informe uma nota</div>
+                <div *ngIf="n3.hasError('minlength')">A nota deve ter no mínimo 1 caracter</div>
+            </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <a pButton type="button" label="Novo" class="ui-button-info" class=" boxButton"  routerLink="/alunos/novo"></a>
+                <a routerLink="/alunos">Voltar para a pesquisa</a>
+            </div>
+
+
+        </div>
+    </form>
+</div>
