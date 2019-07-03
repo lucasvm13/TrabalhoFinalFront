@@ -11,6 +11,7 @@ import { DisciplinasModule } from './disciplinas/disciplinas.module';
 import { CadastrosCadastroComponent } from './cadastros/cadastros-cadastro/cadastros-cadastro.component';
 import { CadastrosPesquisaComponent } from './cadastros/cadastros-pesquisa/cadastros-pesquisa.component';
 import { CadastrosModule } from './cadastros/cadastros.module';
+import { CadastrosService } from './cadastros/cadastros.service'
 
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +23,8 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 import {Routes, RouterModule} from '@angular/router';
 import {SidebarModule} from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
+
+
 
 const rotas: Routes = [
   {path: '', redirectTo:'alunos', pathMatch:'full'},
@@ -36,8 +39,8 @@ const rotas: Routes = [
   {path: 'disciplinas/:id', component: DisciplinasCadastroComponent},
   {path: 'cadastros', component: CadastrosPesquisaComponent},
   {path: 'cadastros/novo', component: CadastrosCadastroComponent},
-  {path: 'cadastros/:id', component: CadastrosCadastroComponent}
- 
+  {path: 'cadastros/:id', component: CadastrosCadastroComponent},
+  
 ];
 
 @NgModule({
@@ -59,7 +62,7 @@ const rotas: Routes = [
   ],
   providers: [
     MessageService,
-    ConfirmationService
+    ConfirmationService,
   ]
     ,
   bootstrap: [AppComponent]

@@ -20,7 +20,7 @@
       </div>
 
       <div class="ui-g-12">
-          <button pButton type="submit" label="Pesquisar"></button>
+          <button pButton type="submit" label="Pesquisar" class="ui-button-rounded"></button>
       </div>
 
     </div>
@@ -31,27 +31,29 @@
               <ng-template pTemplate="header" >
                   <tr>
                     <th class="col-id-header">Id</th>
-                    <th>Nome</th>
+                    <th>Nome</th> 
+                    <th>Alunos</th>
                     <th class="col-acoes"></th>
+                    
                   </tr>
                </ng-template>
-
                <ng-template pTemplate="body" let-dis>
                   <tr>
                     <td class="col-id">{{dis.id}}</td>
-                    <td>{{dis.nome}}</td>
+                    <td>{{dis.nome}}</td> 
+                    <p-button label="Buscar alunos da disciplina" (onClick)="handleClick($event)" class="ui-button-rounded"> </p-button>
                     <td class="col-acoes">
                         <button pButton icon="pi pi-pencil" pTooltip="Editar"  tooltipPosition="top" showDelay="1000"  class="ui-button-info" [routerLink]="['/disciplinas',dis.id]"></button>
                         <button pButton icon="pi pi-trash"  pTooltip="Excluir" tooltipPosition="top" showDelay="1000"  (click)="confirmarExclusao(dis)" class="ui-button-danger"></button>
                     </td>
+                    
                   </tr>
                 </ng-template>
-
           </p-table>
       </div>
-
       <div class="ui-g-12">
-          <a pButton label="Nova disciplina" routerLink="/disciplinas/novo"></a>
+          <button pButton type="button" label="Nova disciplina" class="boxButton ui-button-rounded ui-button-warning"  routerLink="/disciplinas/novo"></button>
+          <button pButton type="button" label="Voltar" class="ui-button-rounded ui-button-warning"  routerLink="/alunos"></button>
       </div>
 
   </div>

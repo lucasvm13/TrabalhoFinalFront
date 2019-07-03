@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class CadastrosSerice {
+export class CadastrosService {
 
   cadastrosURL = 'http://localhost:8080/cadastros';
   cadastrosURLFiltro = this.cadastrosURL;
@@ -43,5 +43,4 @@ export class CadastrosSerice {
   buscarPorCodigo(codigo: number): Promise<Cadastro> {
     return this.http.get<Cadastro>(this.cadastrosURL+'/'+codigo).toPromise();
   }
-
 }

@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class DisciplinasPesquisaComponent implements OnInit {
 
   disciplinas = [];
+  alunos = [];
   filtro: string;
 
   constructor(

@@ -1,11 +1,13 @@
 <p-sidebar [(visible)]="sideBar">
+
   <div class="ui-g">
     <div class="ui-g-12 ui-fluid">
-      <h1 class="boxButton">Menu</h1>
-      <button type="button" (click)="sideBar = false" pButton label="Alunos" routerLink="/alunos" class="boxButton"></button>
-      <button type="button" (click)="sideBar = false" pButton label="Professores" routerLink="/professores" class="boxButton"></button>
-      <button type="button" (click)="sideBar = false" pButton label="Disciplinas" routerLink="/disciplinas" class="boxButton"></button>
-      <button type="button" (click)="sideBar = false" pButton label="Cadastros" routerLink="/cadastros" class="boxButton"></button>
+      <h1 class="boxButton">Menu Escola</h1>
+      <button pButton type="button" (click)="sideBar = false" label="Alunos" class="boxButton ui-button-rounded ui-button-success" routerLink="/alunos"></button>
+      
+      <button pButton type="button" (click)="sideBar = false" label="Professores" class="boxButton ui-button-rounded ui-button-success" routerLink="/professores"></button>
+
+      <button pButton type="button" (click)="sideBar = false" label="Disciplinas" class="boxButton ui-button-rounded ui-button-success" routerLink="/disciplinas"></button>
       </div>
   </div>
 </p-sidebar>

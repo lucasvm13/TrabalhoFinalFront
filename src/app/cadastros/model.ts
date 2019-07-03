@@ -1,11 +1,29 @@
-import {Professor} from '../professores/model'
-import {Aluno} from '../alunos/model';
-import {Disciplina} from '../disciplinas/model';
+export class Aluno{
+  id: number;
+  nome: string;
+  n1: number;
+  n2:number;
+  n3: number;
+  status: string;
+}
+
+export class Professor {
+  id: number;
+  nome: string;
+}
+
+
+export class Disciplina{
+    id: number;
+    nome: string;
+    professor = new Professor();
+    alunos: Aluno[] = [];
+  }
 
 export class Cadastro{
     id: number;
-    professor = new Professor();
-    aluno = new Aluno();
-    disciplina = new Disciplina();
+    professores: Professor[]=[];
+    alunos: Aluno[] = [];
+    disciplinas: Disciplina[] = [];
   }
   

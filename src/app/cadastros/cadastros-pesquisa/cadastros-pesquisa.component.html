@@ -1,3 +1,50 @@
-<p>
-  cadastros-pesquisa works!
-</p>
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmação"
+   icon="pi pi-question-circle"
+   acceptLabel="Sim"
+   rejectLabel="Não"></p-confirmDialog>
+
+   <div class="container">
+      <form autocomplete="off" (ngSubmit)="pesquisar()">
+        <div class="ui-g">
+    
+          <div class="ui-g-12">
+            <h1>
+              Disciplinas Alunos
+            </h1>
+          </div>
+        </div>
+      </form>
+      <div class="ui-g">
+          <div class="ui-g-12">
+              <p-table [value]="cadastros" [paginator]="true" [rows]="3" [responsive]="true">
+                  <ng-template pTemplate="header"> 
+                      <tr>
+                        <th>Disciplina ID</th>
+                        <th>Nome Disciplina</th>
+                        <th class="col-alunos-header">Aluno</th>
+                        <th>Aluno</th>
+                        <th>Aluno</th>
+                      </tr>
+
+                   </ng-template>
+
+                   <ng-template pTemplate="body" let-cadastro>
+                      <tr>
+                        <td>{{cadastro.disciplina.id}}</td>
+                        <td>{{cadastro.disciplina.nome}}</td>
+                        <td class="col-alunos" *ngFor="let aluno of cadastro.disciplina.alunos">{{aluno.nome}}</td>
+                      </tr>
+                    </ng-template>
+              </p-table>
+
+              <div class="ui-g-12">
+                  <button pButton type="button" label="Novo Aluno" class="boxButton ui-button-rounded ui-button-warning"  routerLink="/alunos/novo"></button>
+                  <button pButton type="button" label="Nova disciplina" class="boxButton ui-button-rounded ui-button-warning"  routerLink="/disciplina/novo"></button>
+                  <button pButton type="button" label="Voltar" class="ui-button-rounded ui-button-warning"  routerLink="/alunos"></button>
+              </div>
+
+          </div> 
+      </div>
+    </div>
+    

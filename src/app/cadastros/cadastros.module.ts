@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { CadastrosCadastroComponent } from './cadastros-cadastro/cadastros-cadastro.component';
 import { RouterModule } from '@angular/router';
 
+
+
 @NgModule({
   declarations: [CadastrosPesquisaComponent, CadastrosCadastroComponent],
   imports: [
@@ -23,14 +25,14 @@ import { RouterModule } from '@angular/router';
     ToastModule,
     ConfirmDialogModule,
     FormsModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     CadastrosPesquisaComponent,
     CadastrosCadastroComponent
   ],
   providers: [
-    CadastrosService
+    
   ],
 
 })

@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class DisciplinasService {
 
   disciplinasURL = 'http://localhost:8080/disciplinas';
-  disciplinasURLFiltro = this.disciplinasURL;
+  URLFiltro;
 
 
   constructor(
@@ -17,11 +17,11 @@ export class DisciplinasService {
 
   pesquisar(filtro: any):Promise<any>{
     if(filtro.nome){
-      this.disciplinasURLFiltro = this.disciplinasURL+'/filtro?nome='+filtro.nome;
+      this.URLFiltro = 'http://localhost:8080/disciplinas/busca?nome=' +filtro.nome;
     }else{
-      this.disciplinasURLFiltro = this.disciplinasURL;
+      this.URLFiltro = 'http://localhost:8080/disciplinas';
     }
-    return this.http.get<any>(this.disciplinasURLFiltro).toPromise();
+    return this.http.get<any>(this.URLFiltro).toPromise();
   }
 
   excluir(id:number):Promise<void>{
@@ -44,4 +44,6 @@ export class DisciplinasService {
     return this.http.get<Disciplina>(this.disciplinasURL+'/'+codigo).toPromise();
   }
 
+      
+  
 }
