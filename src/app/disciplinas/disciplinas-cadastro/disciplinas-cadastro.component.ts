@@ -63,7 +63,4 @@ export class DisciplinasCadastroComponent implements OnInit {
   get editando(){
     return Boolean(this.disciplina.id);
   }
-
-
-
 }

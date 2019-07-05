@@ -1,6 +1,8 @@
 import { Cadastro } from './model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Disciplina } from './../disciplinas/model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,8 @@ export class CadastrosService {
   cadastrosURL = 'http://localhost:8080/cadastros';
   cadastrosURLFiltro = this.cadastrosURL;
 
+
+  disciplinasURL = 'http://localhost:8080/disciplinas';
 
   constructor(
     private http: HttpClient
@@ -40,7 +44,12 @@ export class CadastrosService {
     .toPromise();
   }
 
-  buscarPorCodigo(codigo: number): Promise<Cadastro> {
-    return this.http.get<Cadastro>(this.cadastrosURL+'/'+codigo).toPromise();
+  buscarPorCodigo(codigo: number): Promise<Disciplina> {
+    return this.http.get<Disciplina>(this.disciplinasURL+'/'+codigo).toPromise();
+  }
+
+  adicionarD(disciplina: Disciplina): Promise<any>{
+    return this.http.post(this.disciplinasURL, disciplina)
+    .toPromise();
   }
 }

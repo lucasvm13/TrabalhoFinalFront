@@ -17,7 +17,7 @@ export class DisciplinasService {
 
   pesquisar(filtro: any):Promise<any>{
     if(filtro.nome){
-      this.URLFiltro = 'http://localhost:8080/disciplinas/busca?nome=' +filtro.nome;
+      this.URLFiltro = 'http://localhost:8080/disciplinas/buscaDisciplina?nome=' +filtro.nome;
     }else{
       this.URLFiltro = 'http://localhost:8080/disciplinas';
     }
@@ -44,6 +44,7 @@ export class DisciplinasService {
     return this.http.get<Disciplina>(this.disciplinasURL+'/'+codigo).toPromise();
   }
 
-      
-  
+  getDisciplinas(){ 
+    return [];
+  }
 }

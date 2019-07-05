@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AlunosService {
 
   alunosURL = 'http://localhost:8080/alunos';
-  alunosURLFiltro = this.alunosURL;
+  URLFiltro;
 
   constructor(
     private http: HttpClient
@@ -16,11 +16,11 @@ export class AlunosService {
 
   pesquisar(filtro: any):Promise<any>{
     if(filtro.nome){
-      this.alunosURLFiltro = this.alunosURL+'/filtro?nome='+filtro.nome;
+      this.URLFiltro = 'http://localhost:8080/alunos/buscaAluno?nome=' +filtro.nome;
     }else{
-      this.alunosURLFiltro = this.alunosURL;
+      this.URLFiltro = 'http://localhost:8080/alunos';
     }
-    return this.http.get<any>(this.alunosURLFiltro).toPromise();
+    return this.http.get<any>(this.URLFiltro).toPromise();
   }
 
   excluir(id:number):Promise<void>{

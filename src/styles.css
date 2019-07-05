@@ -1,11 +1,22 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: #404C51;
+  color: black;
+  background-color: lightsteelblue;
 }
 
 label {
   font-weight: bold;
+  color: black;
+}
+
+.boxButton{
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.alinharMenuEscola {
+  text-align: center;
 }
 
 @media (min-width: 1200px) {
@@ -28,3 +39,4 @@ label {
   width: 100px;
   text-align: center;
 }
+

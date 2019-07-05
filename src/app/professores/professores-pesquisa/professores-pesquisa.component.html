@@ -15,12 +15,12 @@
       </div>
 
       <div class="ui-g-12 ui-fluid">
-          <label>Descrição</label>
-          <input pInputText placeholder="Digite sua pesquisa" type="text" name="descricao"  [(ngModel)]="filtro">
+          <label>Buscar um professor</label>
+          <input pInputText placeholder="Digite um nome de um professor" type="text" name="descricao"  [(ngModel)]="filtro">
       </div>
 
       <div class="ui-g-12">
-          <button pButton type="submit" label="Pesquisar"></button>
+        <button pButton  icon="pi pi-search" iconPos = "left"  type="submit" label="Pesquisar" class="ui-button-rounded ui-button-secondary"></button>
       </div>
 
     </div>
@@ -55,8 +55,8 @@
       </div>
 
       <div class="ui-g-12">
-          <button pButton type="button" label="Novo Professor" class="boxButton ui-button-rounded ui-button-warning"  routerLink="/professores/novo"></button>
-          <button pButton type="button" label="Voltar" class="ui-button-rounded ui-button-warning"  routerLink="/alunos"></button>
+          <button pButton type="button" icon="pi pi-plus-circle" iconPos="left" label="Novo Professor" class="boxButton ui-button-rounded ui-button-secondary"  routerLink="/professores/novo"></button>
+          <button pButton type="button" icon="pi pi-home" iconPos="left" label="Voltar para inicio" class="boxButton ui-button-rounded ui-button-secondary"  routerLink="/cadastros"></button>
       </div>
 
   </div>

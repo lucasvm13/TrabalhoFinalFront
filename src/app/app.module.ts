@@ -8,10 +8,11 @@ import { DisciplinasCadastroComponent } from './disciplinas/disciplinas-cadastro
 import { DisciplinasPesquisaComponent } from './disciplinas/disciplinas-pesquisa/disciplinas-pesquisa.component';
 import { DisciplinasModule } from './disciplinas/disciplinas.module';
 
+
 import { CadastrosCadastroComponent } from './cadastros/cadastros-cadastro/cadastros-cadastro.component';
 import { CadastrosPesquisaComponent } from './cadastros/cadastros-pesquisa/cadastros-pesquisa.component';
 import { CadastrosModule } from './cadastros/cadastros.module';
-import { CadastrosService } from './cadastros/cadastros.service'
+
 
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,10 +25,12 @@ import {Routes, RouterModule} from '@angular/router';
 import {SidebarModule} from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 
+import { DisciplinasService } from './disciplinas/disciplinas.service';
+
 
 
 const rotas: Routes = [
-  {path: '', redirectTo:'alunos', pathMatch:'full'},
+  {path: '', redirectTo:'cadastros', pathMatch:'full'},
   {path: 'alunos', component: AlunosPesquisaComponent},
   {path: 'alunos/novo', component: AlunosCadastroComponent},
   {path: 'alunos/:id', component: AlunosCadastroComponent},
@@ -37,10 +40,12 @@ const rotas: Routes = [
   {path: 'disciplinas', component: DisciplinasPesquisaComponent},
   {path: 'disciplinas/novo', component: DisciplinasCadastroComponent},
   {path: 'disciplinas/:id', component: DisciplinasCadastroComponent},
+
+  
+  
   {path: 'cadastros', component: CadastrosPesquisaComponent},
   {path: 'cadastros/novo', component: CadastrosCadastroComponent},
-  {path: 'cadastros/:id', component: CadastrosCadastroComponent},
-  
+  {path: 'cadastros/:id', component: CadastrosCadastroComponent}, 
 ];
 
 @NgModule({
@@ -57,12 +62,13 @@ const rotas: Routes = [
     HttpClientModule,
     CadastrosModule,
     ToastModule,
-    SidebarModule,
+    SidebarModule,   
     RouterModule.forRoot(rotas)
   ],
   providers: [
     MessageService,
     ConfirmationService,
+    DisciplinasService
   ]
     ,
   bootstrap: [AppComponent]

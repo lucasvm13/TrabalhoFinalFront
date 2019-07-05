@@ -1,18 +1,22 @@
-<p-sidebar [(visible)]="sideBar">
+<p-sidebar [(visible)]="sideBar" >
 
   <div class="ui-g">
     <div class="ui-g-12 ui-fluid">
-      <h1 class="boxButton">Menu Escola</h1>
-      <button pButton type="button" (click)="sideBar = false" label="Alunos" class="boxButton ui-button-rounded ui-button-success" routerLink="/alunos"></button>
-      
-      <button pButton type="button" (click)="sideBar = false" label="Professores" class="boxButton ui-button-rounded ui-button-success" routerLink="/professores"></button>
+      <h1 class="alinharMenuEscola">Menu Escola</h1>
 
-      <button pButton type="button" (click)="sideBar = false" label="Disciplinas" class="boxButton ui-button-rounded ui-button-success" routerLink="/disciplinas"></button>
+      <button pButton type="button" icon="pi pi-home" iconPos="left"(click)="sideBar = false" label="Inicio" class="boxButton ui-button-rounded ui-button-primary" routerLink="/cadastros"></button>
+
+      <button pButton type="button" icon="pi pi-users" iconPos="left" (click)="sideBar = false" label="Alunos" class="boxButton ui-button-rounded ui-button-primary" routerLink="/alunos"></button>
+      
+      <button pButton type="button" icon="pi pi-briefcase" iconPos="left" (click)="sideBar = false" label="Professores" class="boxButton ui-button-rounded ui-button-primary" routerLink="/professores"></button>
+
+      <button pButton type="button" icon="pi pi-calendar" iconPos="left" (click)="sideBar = false" label="Disciplinas" class="boxButton ui-button-rounded ui-button-primary" routerLink="/disciplinas"></button>
       </div>
   </div>
 </p-sidebar>
 <button type="button" (click)="sideBar = true"
-pButton icon="pi pi-bars" class="boxButton"></button>
+pButton icon="pi pi-align-justify" label ="Menu" class="boxButton ui-button-rounded ui-button-secondary"></button>
+
 
 
 <router-outlet></router-outlet>

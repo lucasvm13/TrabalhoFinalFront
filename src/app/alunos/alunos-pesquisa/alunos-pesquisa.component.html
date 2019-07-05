@@ -15,12 +15,12 @@
       </div>
 
       <div class="ui-g-12 ui-fluid">
-          <label>Descrição</label>
-          <input pInputText placeholder="Digite sua pesquisa" type="text" name="descricao"  [(ngModel)]="filtro">
+          <label>Buscar um aluno</label>
+          <input pInputText placeholder="Digite um nome de um aluno" type="text" name="descricao"  [(ngModel)]="filtro">
       </div>
 
       <div class="ui-g-12">
-          <button pButton type="submit" label="Pesquisar"></button>
+        <button pButton icon="pi pi-search" iconPos = "left" type="submit" label="Pesquisar" class="ui-button-rounded ui-button-secondary"></button>
       </div>
 
     </div>
@@ -30,12 +30,12 @@
           <p-table [value]="alunos" [paginator]="true" [rows]="3" [responsive]="true">
               <ng-template pTemplate="header" >
                   <tr>
-                    <th class="col-id-header">Id</th>
-                    <th>Descrição</th>
+                    <th class="col-id-header">ID</th>
+                    <th>Nome do aluno</th>
                     <th>Nota 1</th>
                     <th>Nota 2</th>
                     <th>Nota 3</th>
-                    <th>Status</th>
+                    <th>Situação</th>
                     <th class="col-acoes"></th>
                   </tr>
                </ng-template>
@@ -59,8 +59,9 @@
       </div>
 
       <div class="ui-g-12">
-          <button pButton type="button" label="Novo Aluno" class="boxButton ui-button-rounded ui-button-warning"  routerLink="/alunos/novo"></button>
-          <button pButton type="button" label="Voltar" class="ui-button-rounded ui-button-warning"  routerLink="/alunos"></button>
+          <button pButton type="button" icon = "pi pi-user-plus" iconPos="left" label="Novo Aluno" class="boxButton ui-button-rounded ui-button-secondary"  routerLink="/alunos/novo"></button>
+          <button pButton type="button" icon="pi pi-home" iconPos="left" label="Voltar para inicio" class="boxButton ui-button-rounded ui-button-secondary"  routerLink="/cadastros"></button>
+  
       </div>
 
   </div>

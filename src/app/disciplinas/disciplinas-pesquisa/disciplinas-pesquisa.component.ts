@@ -17,11 +17,12 @@ export class DisciplinasPesquisaComponent implements OnInit {
   constructor(
     private service:DisciplinasService,
     private msgService: MessageService,
-    private conf: ConfirmationService
-  ) { }
+    private conf: ConfirmationService,
+   ) { }
 
   ngOnInit() {
     this.pesquisar();
+    this.disciplinas = this.service.getDisciplinas();
   }
 
   pesquisar(){
@@ -47,9 +48,4 @@ export class DisciplinasPesquisaComponent implements OnInit {
       this.msgService.add({severity:'success', summary:'Exclusão', detail:'Disciplina '+disciplina.nome+' excluído com sucesso'});
     });
   }
-
-
-
-
-
 }

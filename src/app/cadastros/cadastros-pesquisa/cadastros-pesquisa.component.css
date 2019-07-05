@@ -1,3 +1,9 @@
 .boxButton{
     margin-right: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.alinharInicioEscola{
+text-align: center;
 }

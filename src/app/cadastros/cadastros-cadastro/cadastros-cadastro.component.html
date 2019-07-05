@@ -1,3 +1,39 @@
-<p>
-  cadastros-cadastro works!
-</p>
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1> Alunos da disciplina de {{disciplina.nome}} </h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label>Disciplina ID</label>
+                <input pInputText placeholder="  " type="text" name="nome"
+                  [(ngModel)]="disciplina.id"
+                  #nome="ngModel" >
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label>Nome da disciplina</label>
+                <input pInputText placeholder="  " type="text " name="id"
+                  [(ngModel)]="disciplina.nome"
+                  #nome="ngModel" >
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label>Alunos</label>
+                <p>
+               <li  *ngFor="let aluno of disciplina.alunos">{{aluno.nome}} </li> 
+                </p>
+            </div>
+
+              <div class="ui-g-12">
+              <button pButton icon="pi pi-calendar" iconPos="left" type="button" label="Voltar para disciplinas" class="ui-button-rounded ui-button-secondary" routerLink="/disciplinas"></button>
+              </div>
+
+
+        </div>
+    </form>
+</div>

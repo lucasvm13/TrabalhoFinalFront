@@ -3,6 +3,7 @@ input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
   }
   
   .boxButton{
-    margin: 2px;
+    margin-right: 10px;
+    margin-top: 5px;
   }
   
